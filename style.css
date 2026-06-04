@@ -380,3 +380,79 @@ body {
     color: var(--accent-color);
     font-weight: bold;
 }
+
+/* ========================================= */
+/* RESPONSIVE DESIGN (MEDIA QUERIES)         */
+/* ========================================= */
+
+/* TABLET & SMALL LAPTOPS (Max Width: 1024px) */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 10vw;
+    }
+    .section-title, .workflow-left h2 {
+        font-size: 3rem;
+    }
+    .project-grid, .workflow-container, .skeleton-grid {
+        gap: 2rem; /* Brings columns closer together before stacking */
+    }
+}
+
+/* MOBILE PHONES (Max Width: 768px) */
+@media (max-width: 768px) {
+    /* Adjust Navigation for Touch */
+    .navbar {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-links a {
+        margin-left: 0;
+        font-size: 0.85rem;
+    }
+    
+    /* Scale down massive hero text */
+    .hero-title {
+        font-size: 14vw;
+        letter-spacing: -1px;
+    }
+
+    /* COLLAPSE GRIDS: Switch from 2 columns to 1 column */
+    .project-grid, .workflow-container, .skeleton-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Un-stick the workflow heading so it scrolls naturally on phones */
+    .workflow-left h2 {
+        position: relative;
+        top: 0;
+        margin-bottom: 2rem;
+    }
+
+    /* Adjust structural boxes for narrow screens */
+    .skeleton-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .skeleton-title {
+        font-size: 1.2rem;
+    }
+
+    /* Compress the Footer */
+    .footer {
+        min-height: auto;
+        padding-top: 5rem;
+    }
+    .footer-content h2 {
+        font-size: 2.5rem;
+    }
+    .footer-email {
+        font-size: 1.2rem;
+    }
+}
