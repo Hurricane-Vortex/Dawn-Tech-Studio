@@ -286,3 +286,97 @@ body {
         font-size: 1.5rem;
     }
 }
+/* Skeleton Section Styling */
+.skeleton-section {
+    padding: 6rem 6%;
+    background-color: var(--bg-color);
+}
+
+.skeleton-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+/* The Skeleton Box */
+.skeleton-wrapper {
+    position: relative;
+    padding: 3rem;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 20px,
+        rgba(255, 255, 255, 0.03) 20px,
+        rgba(255, 255, 255, 0.03) 21px
+    ); /* Creates a faint structural grid inside */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.skeleton-wrapper:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Structural Corners */
+.corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent-color); /* Uses the striking red */
+    transition: transform 0.3s ease;
+}
+
+.top-left {
+    top: -2px; left: -2px;
+    border-right: none; border-bottom: none;
+}
+.top-right {
+    top: -2px; right: -2px;
+    border-left: none; border-bottom: none;
+}
+.bottom-left {
+    bottom: -2px; left: -2px;
+    border-right: none; border-top: none;
+}
+.bottom-right {
+    bottom: -2px; right: -2px;
+    border-left: none; border-top: none;
+}
+
+/* Animate corners on hover to make it feel "alive" */
+.skeleton-wrapper:hover .top-left { transform: translate(-4px, -4px); }
+.skeleton-wrapper:hover .top-right { transform: translate(4px, -4px); }
+.skeleton-wrapper:hover .bottom-left { transform: translate(-4px, 4px); }
+.skeleton-wrapper:hover .bottom-right { transform: translate(4px, 4px); }
+
+/* Content Inside the Skeleton */
+.skeleton-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.skeleton-desc {
+    color: var(--muted-color);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.skeleton-data {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    font-family: monospace; /* Gives a more technical, code-like feel */
+    font-size: 0.9rem;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.skeleton-data .highlight {
+    color: var(--accent-color);
+    font-weight: bold;
+}
