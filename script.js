@@ -32,10 +32,13 @@ window.addEventListener('DOMContentLoaded', () => {
         ease: "power4.inOut"
     })
     
-    // =====================================
+   // =====================================
     // THE HERO REVEAL (Starts as the black screen leaves)
     // =====================================
-    .from('.navbar', { y: -30, opacity: 0, duration: 1, ease: 'power4.out' }, "-=0.6")
+    .fromTo('.navbar', 
+        { y: -30, opacity: 0 }, 
+        { y: 0, opacity: 1, duration: 1, ease: 'power4.out', clearProps: "all" }
+    , "-=0.6")
     .from('.hero-title', {
         y: 140, opacity: 0, duration: 1.2, stagger: 0.15, ease: 'power4.out'
     }, '-=0.8')
