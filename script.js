@@ -55,3 +55,27 @@ gsap.from('.skeleton-wrapper .corner', {
 });
 
         
+// =========================================
+// CRITICAL PHYSICS: SCROLL VELOCITY DIAMOND
+// =========================================
+
+let lastScrollY = window.scrollY;
+const diamond = document.querySelector('.diamond');
+const glow = document.querySelector('.diamond-glow');
+
+window.addEventListener('scroll', () => {
+    let currentScrollY = window.scrollY;
+    let scrollSpeed = Math.abs(currentScrollY - lastScrollY);
+    
+    // If the user is actively scrolling fast, trigger the flare
+    if (scrollSpeed > 10) {
+        gsap.to(glow, { opacity: 0.8, scale: 1.8, duration: 0.3, overwrite: "auto" });
+        gsap.to(diamond, { rotate: 135, duration: 0.6, ease: "power2.out", overwrite: "auto" });
+    } else {
+        // Return to the calm, resting state when they stop
+        gsap.to(glow, { opacity: 0.3, scale: 1, duration: 1, overwrite: "auto" });
+        gsap.to(diamond, { rotate: 45, duration: 1, ease: "power2.out", overwrite: "auto" });
+    }
+    
+    lastScrollY = currentScrollY;
+});
