@@ -227,81 +227,92 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* 1. Fix the cramped, messy Navbar */
+    /* 1. The Ultra-Premium Horizontal Mobile Navbar */
     .navbar { 
-        flex-direction: column; 
-        padding: 1.5rem 5%; 
-        gap: 1.2rem; 
-        background: var(--bg-color); /* Ensures a solid background */
+        flex-direction: row; /* Forces it to stay left-to-right */
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%; 
+        background: rgba(13, 13, 13, 0.5) !important;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
+    .logo {
+        font-size: 1rem; 
+        letter-spacing: 1px;
     }
     .nav-links { 
         display: flex; 
-        gap: 1.5rem; 
-        flex-wrap: wrap; 
-        justify-content: center; 
-        width: 100%; 
+        flex-direction: row; /* Stops the links from dropping down */
+        gap: 0.8rem; 
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: nowrap; 
+        width: auto; 
     }
     .nav-links a { 
-        margin-left: 0; 
-        font-size: 0.95rem; 
+        font-size: 0.75rem; 
+        margin: 0;
+    }
+    .btn-primary {
+        padding: 0.4rem 0.8rem; 
+        font-size: 0.75rem;
     }
 
-    /* 2. Fix the broken, overflowing Hero Text */
+    /* 2. Contain the Massive Titanium Text */
     .hero {
-        padding: 0 5%;
+        padding: 0 6%;
     }
     .hero-title { 
-        font-size: 11vw; /* Shrunk down so it stops cutting off */
-        line-height: 1.1; /* Added breathing room between the words */
-        letter-spacing: 0px; 
+        font-size: 13vw; 
+        line-height: 1.05; 
+        letter-spacing: -1px; 
         word-wrap: break-word; 
     }
     .hero-subtitle { 
-        font-size: 1rem; 
-        margin-top: 1.5rem; 
+        font-size: 0.95rem; 
+        margin-top: 1.2rem; 
     }
 
-    /* 3. Fix the spacing between grids so the 60:30:10 ratio breathes */
+    /* 3. Force Cards and Skeletons into a clean column */
+    .projects-section, .workflow-container {
+        padding: 4rem 6%;
+    }
     .project-grid, .workflow-container, .skeleton-grid { 
         grid-template-columns: 1fr; 
-        gap: 2rem; 
-    }
-    .workflow-left h2 { 
-        position: relative; 
-        top: 0; 
-        margin-bottom: 1rem; 
-        font-size: 2.5rem; 
+        gap: 1.5rem; 
     }
     .project-image-wrapper { 
-        height: 280px; 
+        height: 240px; 
     }
 
-    /* 4. Restore the Color Foundation for the Skeletons */
+    /* 4. Adjust the Glassmorphism boxes */
     .skeleton-wrapper { 
-        padding: 1.5rem; 
-        background-color: var(--card-bg); /* Forces the 30% dark grey to show up */
-        border: 1px solid rgba(255, 255, 255, 0.1); 
+        padding: 1.2rem; 
     }
     .skeleton-title { 
-        font-size: 1.2rem; 
+        font-size: 1.1rem; 
+    }
+    .workflow-left h2 { 
+        font-size: 2.2rem; 
+        margin-bottom: 1.5rem;
     }
 
-    /* 5. Clean up the Footer & shrink the Diamond */
+    /* 5. Tidy the Footer and shrink the Diamond */
     .footer { 
-        min-height: auto; 
-        padding-top: 4rem; 
-        padding-bottom: 2rem; 
+        padding: 4rem 6% 2rem 6%; 
+        text-align: center;
     }
     .footer-content h2 { 
-        font-size: 2.2rem; 
+        font-size: 2rem; 
     }
     .footer-email { 
-        font-size: 1.2rem; 
+        font-size: 1.1rem; 
     }
     .signature-emblem {
-        bottom: 20px;
-        right: 20px;
-        transform: scale(0.7); /* Keeps it from covering your content */
+        bottom: 15px;
+        right: 15px;
+        transform: scale(0.6); 
     }
 }
 
