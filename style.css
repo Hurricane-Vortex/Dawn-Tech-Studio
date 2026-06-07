@@ -102,6 +102,79 @@ body {
 .footer-bottom { display: flex; justify-content: space-between; margin-top: 6rem; color: var(--muted-color); font-size: 0.9rem; }
 
 /* ========================================= */
+/* CINEMATIC SPLASH SCREEN                   */
+/* ========================================= */
+
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #050505; /* Pitch black for maximum contrast */
+    z-index: 9999; /* Forces it to sit on top of the entire website */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.splash-content {
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.splash-logo {
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.splash-loader {
+    display: flex;
+    justify-content: space-between;
+    font-family: monospace; /* Gives it that hacker/terminal look */
+    font-size: 0.9rem;
+    color: var(--muted-color);
+}
+
+.loading-percentage {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.loading-bar-container {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-color); /* The crimson neon glow */
+}
+
+.terminal-string {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--muted-color);
+    text-align: center;
+    opacity: 0; /* Stays invisible until the loading hits 100% */
+}
+
+/* ========================================= */
 /* RESPONSIVE DESIGN (MEDIA QUERIES)         */
 /* ========================================= */
 
