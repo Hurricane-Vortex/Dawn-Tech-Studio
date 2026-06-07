@@ -125,3 +125,49 @@ body {
     .footer-content h2 { font-size: 2.5rem; }
     .footer-email { font-size: 1.5rem; }
         }
+
+
+/* ========================================= */
+/* PREMIUM PHYSICS: CRIMSON DIAMOND EMBLEM   */
+/* ========================================= */
+
+.signature-emblem {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    z-index: 9000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; 
+}
+
+/* The Sharp Diamond Shape */
+.diamond {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--accent-color);
+    transform: rotate(45deg);
+    position: relative;
+    z-index: 2;
+}
+
+/* The Breathing Red Aura */
+.diamond-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    filter: blur(15px);
+    opacity: 0.3;
+    z-index: 1;
+    animation: breathe 3s infinite alternate;
+}
+
+@keyframes breathe {
+    0% { opacity: 0.1; transform: scale(0.8); }
+    100% { opacity: 0.4; transform: scale(1.3); }
+}
