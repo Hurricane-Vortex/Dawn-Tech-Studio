@@ -89,3 +89,15 @@ window.addEventListener('scroll', () => {
     }
     lastScrollY = currentScrollY;
 });
+
+// =========================================
+// 4. 3D GLASS TILT PHYSICS (THE APPLE EFFECT)
+// =========================================
+VanillaTilt.init(document.querySelectorAll(".project-card, .skeleton-wrapper"), {
+    max: 8,                  // How steep the 3D tilt is
+    speed: 400,              // How fast it reacts to touch/mouse
+    glare: true,             // Turns on the physical glass reflection
+    "max-glare": 0.15,       // Keeps the glare subtle and premium
+    scale: 1.02,             // Very slight pop-out effect
+    gyroscope: true          // Allows phone movement to tilt the cards
+});
