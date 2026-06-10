@@ -14,14 +14,25 @@
     --accent-color: #e11d48;   /* 10% - Hyper Crimson for Accents & Buttons */
 }
 
+/* Disable native smooth scrolling so Lenis can take over */
 html {
-    scroll-behavior: smooth;
     background-color: var(--bg-color);
     color: var(--text-color);
 }
 
 body {
     overflow-x: hidden;
+}
+
+/* Lenis Engine Base Rules */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
 }
 
 /* Premium Frosted Glass Navigation */
