@@ -101,3 +101,26 @@ VanillaTilt.init(document.querySelectorAll(".project-card, .skeleton-wrapper"), 
     scale: 1.02,             // Very slight pop-out effect
     gyroscope: true          // Allows phone movement to tilt the cards
 });
+
+// =========================================
+// 5. LENIS MOMENTUM SCROLL ENGINE
+// =========================================
+const lenis = new Lenis({
+    duration: 1.2,             // How heavy and smooth the scroll feels
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Cinematic easing curve
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smooth: true,
+    mouseMultiplier: 1,
+    smoothTouch: false,        // Keeps standard touch for mobile so it doesn't feel too slippery
+    touchMultiplier: 2,
+});
+
+// Sync Lenis scroll with GSAP ScrollTrigger
+lenis.on('scroll', ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
