@@ -90,8 +90,13 @@ html.lenis {
 .project-card { display: flex; flex-direction: column; cursor: pointer; }
 .project-image-wrapper { width: 100%; height: 500px; overflow: hidden; background-color: var(--card-bg); border-radius: 8px; margin-bottom: 1.5rem; }
 .project-image { width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
-.img-placeholder-1 { background: linear-gradient(135deg, #222 0%, var(--accent-color) 100%); }
-.img-placeholder-2 { background: linear-gradient(135deg, #333 0%, #111 100%); }
+/* Purging the blue: Ultra-Premium Dark Carbon Placeholders */
+.img-placeholder-1 { background: linear-gradient(135deg, #161616 0%, #0d0d0d 100%); }
+.img-placeholder-2 { background: linear-gradient(135deg, #111111 0%, #050505 100%); }
+
+/* Forcing text area backgrounds to be completely transparent */
+.project-info { position: relative; padding-left: 3rem; background: transparent !important; padding-top: 1.5rem; }
+.project-card { display: flex; flex-direction: column; cursor: pointer; background: transparent !important; }
 .project-card:hover .project-image { transform: scale(1.04); }
 .project-info { position: relative; padding-left: 3rem; }
 .project-num { position: absolute; left: 0; top: 0; font-weight: 700; color: var(--accent-color); }
@@ -126,13 +131,148 @@ html.lenis {
 .skeleton-data { display: flex; justify-content: space-between; padding: 0.8rem 0; font-family: monospace; font-size: 0.9rem; border-bottom: 1px dashed rgba(255, 255, 255, 0.1); }
 .skeleton-data .highlight { color: var(--accent-color); font-weight: bold; }
 
-/* Footer Section */
-.footer { padding: 10rem 6% 3rem 6%; display: flex; flex-direction: column; justify-content: space-between; min-height: 70vh; }
-.footer-content h2 { font-size: 5vw; font-weight: 900; letter-spacing: -2px; margin-bottom: 2rem; }
-.footer-email { font-size: 3vw; color: var(--text-color); text-decoration: none; font-weight: 300; transition: color 0.3s ease; border-bottom: 2px solid var(--accent-color); }
-.footer-email:hover { color: var(--accent-color); }
-.footer-bottom { display: flex; justify-content: space-between; margin-top: 6rem; color: var(--muted-color); font-size: 0.9rem; }
+/* ========================================= */
+/* ENTERPRISE MEGA-FOOTER                    */
+/* ========================================= */
+.enterprise-footer {
+    padding: 6rem 6% 2rem 6%;
+    background-color: #050505;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+}
 
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+    margin: 3rem 0;
+}
+
+/* TOP SECTION */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+}
+.footer-brand-info h2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+.footer-brand-info p {
+    color: var(--muted-color);
+    max-width: 400px;
+    line-height: 1.6;
+}
+.subscribe-label {
+    font-size: 0.8rem;
+    color: var(--muted-color);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+.subscribe-form {
+    display: flex;
+    gap: 10px;
+    background: var(--card-bg);
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+.subscribe-form:focus-within {
+    border-color: var(--accent-color);
+}
+.subscribe-form input {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    padding: 0.8rem 1rem;
+    outline: none;
+    width: 250px;
+}
+.btn-subscribe {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 0 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-subscribe:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* MIDDLE SECTION (THE GRID) */
+.footer-middle {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+.footer-col h4 {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+.footer-col a {
+    display: block;
+    color: var(--muted-color);
+    text-decoration: none;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer-col a:hover {
+    color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+/* BOTTOM SECTION */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--muted-color);
+    font-size: 0.85rem;
+}
+.footer-legal {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.legal-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.legal-links a {
+    color: var(--muted-color);
+    text-decoration: none;
+}
+.legal-links a:hover {
+    color: var(--text-color);
+}
+.footer-system {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+}
 /* ========================================= */
 /* GLASSMORPHISM & NEON HOVER PHYSICS        */
 /* ========================================= */
