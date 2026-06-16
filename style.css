@@ -325,6 +325,31 @@ html.lenis {
         right: 15px;
         transform: scale(0.6); 
     }
+    /* Enterprise Footer Mobile Fixes */
+    .footer-top {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .subscribe-form {
+        width: 100%;
+    }
+    .subscribe-form input {
+        width: 100%;
+    }
+    .footer-middle {
+        grid-template-columns: repeat(2, 1fr); /* Splits the 4 columns into 2 neat rows */
+        gap: 3rem 1rem;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+    .footer-legal {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
 }
 
 /* ========================================= */
